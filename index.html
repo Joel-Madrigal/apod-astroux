@@ -18,53 +18,62 @@
       type="module"
       src="https://cdn.jsdelivr.net/npm/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js"
     ></script>
-     <style>
-	body {
-           margin: 0;
-           padding: 0;
-           font-family: 'Roboto', sans-serif;
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-           justify-content: center;
-        }
-	.container {
-	   max-width: 1200px;
-	   width: 100%;
-     	   margin: 0 auto;
-	   padding-top: 30px;
-	}
-	.center-container {
-	   text-align: center;
-	   margin: 0 auto;
-	}
-	.img {
-	   object-fit: contain;
-           width: 100%;
-	}
-	.nav {
-	   margin: 0 auto;
-	   padding-top: 30px;
-	}
-     </style>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .container {
+        max-width: 1200px;
+	width: 100%;
+     	margin: 0 auto;
+	padding-top: 30px;
+      }
+      .center-container {
+        text-align: center;
+	margin: 0 auto;
+      }
+      .img {
+        object-fit: contain;
+        width: 100%;
+      }
+      .nav {
+        margin: 0 auto;
+	padding-top: 30px;
+      }
+      .foot {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px auto;
+      }
+    </style>
   </head>
   <body>
     <rux-global-status-bar appname="App">
       <rux-clock></rux-clock>
     </rux-global-status-bar>
     <div class="nav">
-       <rux-breadcrumb>
-          <rux-breadcrumb-item href="#">APOD</rux-breadcrumb-item>
-          <rux-breadcrumb-item href="#">Other cool feature</rux-breadcrumb-item>
-          <rux-breadcrumb-item href="#">Who we are</rux-breadcrumb-item>
-       </rux-breadcrumb>
+      <rux-breadcrumb>
+        <rux-breadcrumb-item href="index.html">APOD</rux-breadcrumb-item> 
+        <rux-breadcrumb-item href="something.html">Other cool feature</rux-breadcrumb-item> 
+        <rux-breadcrumb-item href="about.html">Who we are</rux-breadcrumb-item>
+      </rux-breadcrumb>
     </div>
     <rux-container class="container">
       <div class="center-container">
         <h2>APOD using Astro UX!</h2> 
-          <img class="img" src="" id="apod-picture">
+        <img class="img" src="" id="apod-picture">
+      </div>
+      <div class="foot" slot="footer">
+        <rux-icon size="small" icon="contact-mail"></rux-icon>
       </div>
     </rux-container>
   </body>
-  <script src="apod-fetch.js"></script>
+  <script src="apod-fetch.js"></script>   
 </html>
