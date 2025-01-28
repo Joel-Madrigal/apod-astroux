@@ -1,4 +1,4 @@
-alert('hi');
+// alert('hi');
 
 let key = '6Mjctd2xmBfr5X0rAPFyaCJGxpff5SmO78f80jSx';
 let api = 'https://api.nasa.gov/planetary/apod?api_key=' + key
@@ -12,7 +12,12 @@ request.onload = function () {
   if (request.status >= 200 && request.status < 400) {
     // Success!
     let data = JSON.parse(request.responseText);
-    console.log(data)
+    console.log(data.url)
+
+    if (data.url.length > 0) {
+      let imgElement = document.getElementById('apod-picture');
+      imgElement.src = data.url;
+    }
   } else {
     // We received an error from the api!
   }
