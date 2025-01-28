@@ -1,7 +1,7 @@
-alert('hi')
+alert('hi');
 
 let key = '6Mjctd2xmBfr5X0rAPFyaCJGxpff5SmO78f80jSx';
-let api = '' + key
+let api = 'https://api.nasa.gov/planetary/apod?api_key=' + key
 
 
 // http://youmightnotneedjquery.com/#json
