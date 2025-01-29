@@ -30,13 +30,13 @@
       }
       .container {
         max-width: 1200px;
-	width: 100%;
-     	margin: 0 auto;
-	padding-top: 30px;
+        width: 100%;
+        margin: 0 auto;
+	      padding-top: 30px;
       }
       .center-container {
         text-align: center;
-	margin: 0 auto;
+	      margin: 0 auto;
       }
       .img {
         object-fit: contain;
@@ -44,7 +44,7 @@
       }
       .nav {
         margin: 0 auto;
-	padding-top: 30px;
+	      padding-top: 30px;
       }
       .foot {
         display: flex;
@@ -55,8 +55,23 @@
     </style>
   </head>
   <body>
-    <rux-global-status-bar appname="App">
+    <rux-global-status-bar 
+      app-domain="Astro"
+      app-name="Dashboard"
+      app-version="v0.1"
+    >
       <rux-clock></rux-clock>
+
+      <rux-switch  
+        slot="right-side"
+        id="theme-switch"
+      >
+        <rux-icon
+          id="theme-icon"
+          slot="label"
+          icon="brightness-3"
+          size="small"></rux-icon>
+      </rux-switch>
     </rux-global-status-bar>
     <div class="nav">
       <rux-breadcrumb>
@@ -75,5 +90,6 @@
       </div>
     </rux-container>
   </body>
-  <script src="../apod-fetch.js"></script>   
+  <script src="../theme-switch.js"></script>
+  <script src="../apod-fetch.js"></script>
 </html>
