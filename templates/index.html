@@ -86,11 +86,13 @@
         <h2>APOD using Astro UX!</h2> 
         <img class="img" src="" id="apod-picture">
       </div>
-      <div class="foot" slot="footer">
-        <rux-icon size="small" icon="contact-mail"></rux-icon>
+      <div style="display: flex; flex-flow: column; justify-content: center;">
+        <h3>Upcoming SpaceX Launches!</h3>
+        <rux-log filter=""></rux-log>
       </div>
     </rux-container>
   </body>
   <script src="../theme-switch.js"></script>
   <script src="../apod-fetch.js"></script>
+  <script src="../launch-getter.js"></script>
 </html>

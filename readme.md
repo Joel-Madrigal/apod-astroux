@@ -15,3 +15,8 @@ Todo:
 Done:
 
 - fetch apod picture and show it
+
+Method for displaying upcoming launches:
+
+- Use ASUDX log widget to list info.
+- Put it underneath the APOD.
