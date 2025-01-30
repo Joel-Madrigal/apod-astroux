@@ -99,6 +99,21 @@
         </h2>
       </center>
     </rux-container>
+
+    <rux-container class="container">
+      <div slot="header">Where is the ISS?</div>
+      A map should appear below
+
+        <div id="av-orbit">
+          <script>
+              var avOrbitProperties = {
+                  size: 'medium',
+                  lang: 'en'
+              };
+          </script>
+          <script src="https://astroviewer.net/widgets/widgets/orbit.js"></script>
+      </div>
+    </rux-container>
   </body>
   <script src="../theme-switch.js"></script>
   <script src="../apod-fetch.js"></script>
