@@ -3,7 +3,6 @@
 Todo:
 
 - display [upcoming launches](https://spaceflightnow.com/launch-schedule/) in a little widget under the apod
-- definitely add a link to the [spacecrew.com job board](https://spacecrew.com/). bonus points make it its own widget?
 - a link to the [us news and rankings for college astronomy programs](https://www.usnews.com/education/best-global-universities/space-science)
 - "where is the international space station" widget, [like this](https://www.astroviewer.net/iss/en/)
 - Astronaut Profiles & Mission History (database of astronauts, their missions, and notable achievements)
@@ -15,6 +14,7 @@ Todo:
 Done:
 
 - fetch apod picture and show it
+- definitely add a link to the [spacecrew.com job board](https://spacecrew.com/). bonus points make it its own widget?
 
 Method for displaying upcoming launches:
 
