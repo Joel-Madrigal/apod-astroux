@@ -11,7 +11,7 @@ const lightIcon = 'wb-sunny';
 const preference = localStorage.getItem('theme');
 
 if (preference != null) {
-  preferences = JSON.parse(preference);
+  let preferences = JSON.parse(preference);
 
   body.className = preferences.theme;
   themeIcon.icon = preferences.icon;
