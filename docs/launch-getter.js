@@ -21,7 +21,18 @@ async function scrapeLaunches() {
   const to_be_scraped = await getHTML();
   const parser = new DOMParser();
   const html = parser.parseFromString(to_be_scraped, "text/html");
-  const parent_element = html.getElementsByClassName('event-category-type violet');
-  console.log(parent_element);
-}
+  const parent_div = html.getElementsByClassName("event-calender-container");
+  if (parent_div.length > 0) {
+    const outer_child = parent_div[0].children;
+    const next_child = outer_child[1].children;
+    const third_to_last = next_child[0].children;
+    const second_to_last = third_to_last[4].children;
+    const launch_text = second_to_last[1].innerHTML; 
+    
 
+    /*Can't get the last div that contains the launches because there is a '::before' css
+    within the parent div that is restricing access to the div I need. Might research for other
+    options for launching sites. Hrm... */
+  }
+  console.log('nope');
+}
