@@ -18,7 +18,5 @@ Done:
 - definitely add a link to the [spacecrew.com job board](https://spacecrew.com/). bonus points make it its own widget?
 - "where is the international space station" widget, [like this](https://www.astroviewer.net/iss/en/)
 
-Method for displaying upcoming launches:
-
-- Use ASUDX log widget to list info.
-- Put it underneath the APOD.
+NOTE:
+- fetching upcoming launch data has proven to be tricky since there are little free sources that let you scrape their html/fetch an API.
