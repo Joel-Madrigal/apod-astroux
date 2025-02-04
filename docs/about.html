@@ -1,1 +1,97 @@
-joel and vivek are two cool guys who like having fun
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Astro</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js"
+    ></script>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .box {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .home {
+      margin-top: 0px;
+    }
+    .right-item {
+      align-self: flex-start;
+      max-width: 30vw;
+      margin-top: 100px;
+      margin-left: 70%;
+      text-align: right;
+      
+    }
+    .left-item {
+      margin
+      align-self: flex-start;
+      max-width: 30vw;
+      margin-top: 0px;
+    }
+    .img {
+      object-fit: contain;
+      width: 100%;
+      max-height: 85vh;
+    }
+    .nav {
+      display: flex;
+      justify-content: center;
+      padding: 20px;s
+    }
+  </style>
+  <body>
+    <div class="nav">
+      <rux-breadcrumb>
+        <rux-breadcrumb-item href="index.html">APOD</rux-breadcrumb-item>
+      </rux-breadcrumb>
+    </div>
+
+    <rux-container class="box">
+      <div slot="header" class="left-item">Vivek Bhookya
+        <rux-card>
+          <img class="img" src="./images/1574078862173.jpg"/>
+          <rux-accordion>
+            <rux-accordion-item><div slot="label">Who Am I?</div>
+              <p>I'm a SWE at Statefarm. I love traveling, helping others, and enjoying time with friends. One of my biggest goals is to...</p>
+            </rux-accordion-item>
+          </rux-accordion>
+        </rux-card>
+      </div>
+      <div slot="header" class="right-item">Joel Madrigal
+        <rux-card>
+          <img class="img" src="./images/1710788956078.jpg"/>
+          <rux-accordion>
+            <rux-accordion-item><div slot="label">Who Am I?</div>
+              <p>I'm an incoming SWE at Fitch Group. I enjoy playing video games, learning new langauages, and spending time with friends and family.</p>
+            </rux-accordion-item>
+          </rux-accordion>
+        </rux-card>
+      </div>
+    </rux-container>
+  </body>
+  <script>
+  </script>
+</html>
