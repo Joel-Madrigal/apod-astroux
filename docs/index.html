@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Astro</title>
+    <title>Astro | SCOUT</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
@@ -14,53 +14,27 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css"
     />
+    <link rel="stylesheet" href="styles.css" />
     <script
       type="module"
       src="https://cdn.jsdelivr.net/npm/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js"
     ></script>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Roboto', sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-      .container {
-        max-width: 1200px;
-        width: 100% auto;
-        margin: 0 auto;
-	padding-top: 30px;
-      }
-      .center-container {
-        text-align: center;
-	margin: 0 auto;
-      }
-      .img {
-        object-fit: contain;
-        width: 100%;
-        max-height: 85vh;
-      }
-      .nav {
-        margin: 0 auto;
-	padding-top: 30px;
-      }
-      .foot {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 10px auto;
-      }
-    </style>
   </head>
+
   <body>
     <rux-global-status-bar 
       app-domain="Astro"
-      app-name="Dashboard"
-      app-version="v0.1"
+      app-name="Surface Collection & Observation Utility Tracker"
     >
+  </rux-global-status-bar>
+
+  
+    <div id="app"></div>
+    <script src="index.js"></script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>    
       <rux-clock></rux-clock>
 
       <rux-switch  
@@ -74,58 +48,4 @@
           size="small"></rux-icon>
       </rux-switch>
     </rux-global-status-bar>
-
-    <div class="nav">
-      <rux-breadcrumb>
-        <rux-breadcrumb-item href="index.html">APOD</rux-breadcrumb-item> 
-        <rux-breadcrumb-item href="something.html">Other cool feature</rux-breadcrumb-item> 
-        <rux-breadcrumb-item href="about.html">Who we are</rux-breadcrumb-item>
-      </rux-breadcrumb>
-    </div>
-
-    <rux-container class="container">
-      <center>
-        <h3>Welcome to Astro! This is a dashboard for all things space!
-          <br>
-          <em>This project is a fan-built demonstration of the
-            <a href="https://www.astrouxds.com/" target="_blank">Astro UXDS</a> UI library</em>
-        </h3>
-      </center>
-    </rux-container>
-
-    <rux-container class="container">
-      <div class="center-container">
-        <h2>APOD using Astro UX!</h2> 
-        <img class="img" src="" id="apod-picture">
-      </div>
-      <!--<div style="display: flex; flex-flow: column; justify-content: center;">
-        <h3>Upcoming <href onclick="scrapeLaunches()">Launches!</href></h3>
-        <rux-log filter=""></rux-log>
-      </div>-->
-    </rux-container>
-     
-    <rux-container class="container">
-      <center>
-        <h2>Want a job in the space industry? Check out<br>
-          <a href="https://spacecrew.com/" target="_blank">Space Crew</a>!
-        </h2>
-      </center>
-    </rux-container>
-
-    <rux-container class="container">
-      <div slot="header">Where is the ISS?</div>
-        <div id="av-orbit">
-          <script>
-            var avOrbitProperties = {
-              size: 'small',
-              lang: 'en'
-            };
-          </script>
-        <script src="https://astroviewer.net/widgets/widgets/orbit.js"></script>
-      </div>
-    </rux-container>
-  </body>
-  <script src="theme-switch.js"></script>
-  <script src="apod-fetch.js"></script>
-  <script src="launch-getter.js"></script>
-</html>
+-->

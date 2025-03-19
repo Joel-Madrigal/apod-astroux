@@ -1,0 +1,53 @@
+section {
+  padding: var(--spacing-8);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--table-row-color-background-default);
+}
+
+table rux-checkbox {
+  display: flex;
+}
+
+thead {
+  box-shadow: var(--table-header-shadow);
+}
+
+th {
+  padding: var(--table-header-cell-padding);
+  text-align: left;
+  background-color: var(--table-header-color-background);
+  font-family: var(--font-heading-5-font-family);
+  font-size: var(--font-heading-5-font-size);
+  font-weight: var(--font-heading-5-font-weight);
+  line-height: var(--font-heading-5-line-height);
+  letter-spacing: var(--font-heading-5-letter-spacing);
+}
+
+tbody tr {
+  color: var(--table-row-color-text);
+  border-bottom-style: solid;
+  border-bottom-color: var(--table-row-color-border);
+  border-bottom-width: var(--table-row-border-width);
+  font-family: var(--font-body-1-font-family);
+  font-size: var(--font-body-1-font-size);
+  font-weight: var(--font-body-1-font-weight);
+  line-height: var(--font-body-1-line-height);
+  letter-spacing: var(--font-body-1-letter-spacing);
+}
+
+tbody tr:hover {
+  background-color: var(--table-row-color-background-hover);
+}
+
+tbody tr[selected='true'] {
+  background-color: var(--table-row-color-background-selected);
+}
+
+td {
+  padding-inline: var(--table-body-cell-padding-x);
+  padding-block: var(--table-body-cell-padding-y);
+}
