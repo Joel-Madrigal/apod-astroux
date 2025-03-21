@@ -30,8 +30,78 @@
 
   
     <div id="app"></div>
-    <script src="index.js"></script>
+
+    <div id="roverModal" class="modal">
+      <span class="close">&times;</span>
+      <img src="https://www.shutterstock.com/image-photo/mars-rover-on-red-planet-260nw-2197648801.jpg" width="70%" alt="">
+      <h2><strong>Rover ID:</strong> <span id="modalRoverID"></span></h2>
+
+      <div class="modal-content">
+        <div class="modal-left">
+          <p><strong>Rover Type:</strong> <span id="modalRoverType"></span></p>
+          <p><strong>Battery:</strong> <span id="modalBattery"></span></p>
+          <p><strong>Status:</strong> <span id="modalStatus"></span></p>
+          <p><strong>Latest Update:</strong> <span id="modalUpdate"></span></p>
+        </div>
+        <div class="modal-right">
+          <p><strong>Location:</strong> <span id="modalLocation"></span></p>
+          <img id="moon-location" src="" width="90%" alt="">
+
+        </div>
+      </div>
+    </div>
+    
+    <!-- Add CSS for modal -->
+    <style>
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1001;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        background: #162635;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .modal-left, .modal-right {
+        flex: 1;
+        padding: 10px;
+      }
+
+      .modal-left {
+        /* border-right: 1px solid #ddd; Visual separation */
+      }
+
+      .modal-right {
+        text-align: center;
+        font-weight: bold;
+      }
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent grey */
+        display: none;
+        z-index: 1000;
+      }
+      .modal-content {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .close {
+        float: right;
+        cursor: pointer;
+        font-size: 24px;
+      }
+    </style>
   </body>
+  <script src="index.js"></script>
 </html>
 
 <!-- <!DOCTYPE html>    

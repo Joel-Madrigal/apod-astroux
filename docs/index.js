@@ -60,11 +60,11 @@ const headers = [
 const rows = Array.from({ length: 8 }, () => ({
   id: getRandomNum(19999999, 9999999),
   roverType: getRandomRoverType(),
-  originalTag: '0000' + getRandomNum(11111, 99999),
+  originalTag: '00' + getRandomNum(111, 999),
   battery: getRandomNum(1, 101) + '%',
   location: getRandomCrater(),
   roverStatus: getRoverStatus(),
-  obsTime: '2020 158 01:23:45:678',
+  obsTime: '06:09',
   // azRtAsc: getRandomNum(120, 150, 4),
   // elDec: getRandomNum(1000, 3500, 3),
   // range: getRandomNum(1500, 7500, 3),
@@ -118,6 +118,45 @@ document.querySelector('#app').innerHTML = `
   </section>
 `;
 
+
+// Create modal and overlay elements
+const modalOverlay = document.createElement('div');
+modalOverlay.classList.add('modal-overlay');
+document.body.appendChild(modalOverlay);
+
+const modal = document.getElementById("roverModal");
+const closeModal = document.querySelector(".close");
+const tableRows = document.querySelectorAll('tr');
+
+tableRows.forEach((tableRow) => {
+  tableRow.addEventListener('click', (e) => {
+    console.log('row clicked=')
+    console.log(e.target.parentElement)
+
+    const cells = e.target.parentElement.innerText.split('\t')
+
+    // Open modal displaying the innerText of e.target.parentElement
+     // Extract the data from the row
+     document.getElementById("modalRoverType").innerText = cells[1];
+     document.getElementById("modalRoverID").innerText = cells[2];
+     document.getElementById("modalBattery").innerText = cells[3];
+     document.getElementById("modalLocation").innerText = cells[4];
+     document.getElementById("modalStatus").innerText = cells[5];
+     document.getElementById("modalUpdate").innerText = cells[6];
+     document.getElementById("moon-location").src = moonCraterLocations[cells[4]];
+ 
+     // Show the modal
+     modal.style.display = "block";
+     modalOverlay.style.display = 'block';
+  });
+});
+
+// Close modal when clicking the close button
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+  modalOverlay.style.display = 'none';
+});
+
 const checkboxs = document.querySelectorAll('rux-checkbox');
 
 checkboxs.forEach((checkbox) => {
@@ -150,6 +189,40 @@ checkboxs.forEach((checkbox) => {
     checkAllEle.setAttribute('checked', areAllRowsChecked);
   });
 });
+
+const moonCraterLocations = {
+  "Albategnius": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Location_of_albategnius_crater.jpg/120px-Location_of_albategnius_crater.jpg",
+  "Aristarchus": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Location_of_lunar_aristarchus_crater.jpg/120px-Location_of_lunar_aristarchus_crater.jpg",
+  "Aristoteles": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Location_of_lunar_aristoteles_crater.jpg/120px-Location_of_lunar_aristoteles_crater.jpg",
+  "Bailly": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Location_of_lunar_bailly_crater.jpg/120px-Location_of_lunar_bailly_crater.jpg",
+  "Clavius": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Location_of_lunar_crater_clavius.jpg/120px-Location_of_lunar_crater_clavius.jpg",
+  "Copernicus": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Location_of_lunar_crater_copernicus.jpg/120px-Location_of_lunar_crater_copernicus.jpg",
+  "Fra Mauro": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Location_of_lunar_crater_fra_mauro.jpg/120px-Location_of_lunar_crater_fra_mauro.jpg",
+  "Humboldt": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Location_of_lunar_crater_humboldt.jpg/120px-Location_of_lunar_crater_humboldt.jpg",
+  "Janssen": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Location_of_lunar_crater_janssen.jpg/120px-Location_of_lunar_crater_janssen.jpg",
+  "Langrenus": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Location_of_lunar_crater_langrenus.jpg/120px-Location_of_lunar_crater_langrenus.jpg",
+  "Longomontanus": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Location_of_lunar_crater_longomontanus.jpg/120px-Location_of_lunar_crater_longomontanus.jpg",
+  "Maginus": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Location_of_lunar_crater_maginus.jpg/120px-Location_of_lunar_crater_maginus.jpg",
+  "Metius": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Location_of_lunar_crater_metius.jpg/120px-Location_of_lunar_crater_metius.jpg",
+  "Moretus": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Location_of_lunar_crater_moretus.jpg/120px-Location_of_lunar_crater_moretus.jpg",
+  "Petavius": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Location_of_lunar_crater_petavius.jpg/120px-Location_of_lunar_crater_petavius.jpg",
+  "Picard": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Location_of_lunar_crater_picard.jpg/120px-Location_of_lunar_crater_picard.jpg",
+  "Piccolomini": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Location_of_lunar_crater_piccolomini.jpg/120px-Location_of_lunar_crater_piccolomini.jpg",
+  "Pitatus": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Location_of_lunar_crater_pitatus.jpg/120px-Location_of_lunar_crater_pitatus.jpg",
+  "Plinius": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Location_of_lunar_crater_plinius.jpg/120px-Location_of_lunar_crater_plinius.jpg",
+  "Rheita": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Location_of_lunar_crater_rheita.jpg/120px-Location_of_lunar_crater_rheita.jpg",
+  "Russell": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Location_of_lunar_crater_russell.jpg/120px-Location_of_lunar_crater_russell.jpg",
+  "Schickard": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Location_of_lunar_crater_schickard.jpg/120px-Location_of_lunar_crater_schickard.jpg",
+  "Seleucus": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Location_of_lunar_crater_seleucus.jpg/120px-Location_of_lunar_crater_seleucus.jpg",
+  "Stadius": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Location_of_lunar_crater_stadius.jpg/120px-Location_of_lunar_crater_stadius.jpg",
+  "Stöfler": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Location_of_lunar_crater_stofler.jpg/120px-Location_of_lunar_crater_stofler.jpg",
+  "Thebit": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Location_of_lunar_crater_thebit.jpg/120px-Location_of_lunar_crater_thebit.jpg",
+  "Theophilus": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Location_of_lunar_crater_theophilus.jpg/120px-Location_of_lunar_crater_theophilus.jpg",
+  "Tycho": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Lage_des_Mondkraters_Tycho.jpg/120px-Lage_des_Mondkraters_Tycho.jpg",
+  "Vendelinus": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Location_of_lunar_crater_vendelinus.jpg/120px-Location_of_lunar_crater_vendelinus.jpg",
+  "Wargentin": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Location_of_lunar_crater_wargentin.jpg/120px-Location_of_lunar_crater_wargentin.jpg",
+};
+
 
 /*
 
